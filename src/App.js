@@ -1,22 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import logoBeeHappy from './Bee-happy-580x386.svg';
 
-function App() {
+
+function App(props) {
+/*tslint:disabled*/
+  const [name, setName] = React.useState("World");
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <img src={logoBeeHappy} className="App-logo" alt="logo" />
+        <h1>Hello, {name}!</h1>
+          <input type="text" onChange={() => setName(event.target.value)}/>
       </header>
     </div>
   );
